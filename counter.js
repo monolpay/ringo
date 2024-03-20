@@ -15,6 +15,8 @@ function updateScore(buttonId, scoreId, setId, increment, keyToPress){
     var score = document.getElementById(scoreId);
     var set = document.getElementById(setId)
 
+
+
     button.addEventListener("click", function(){
         var currentScore = Number(score.textContent);
         let currentSet = Number(set.textContent)
@@ -32,8 +34,11 @@ function updateScore(buttonId, scoreId, setId, increment, keyToPress){
     });
 }
 
-function styling(button1Id, button2Id, button3Id, button4Id){
-    var button = document.getElementById(button1Id);
+function styling(buttonId){
+    var button = document.getElementById(buttonId)
+
+
+    
     button.addEventListener("click", function(){
 
         let score1 = Number(document.getElementById("score-game-team-1").textContent) + Number(document.getElementById("score-set-team-1").textContent) * max_points
@@ -41,7 +46,7 @@ function styling(button1Id, button2Id, button3Id, button4Id){
 
         if (score1 > score2){
         console.log("Tým 1 wins")
-        document.getElementsByTagName("html")[0].style="color: green"
+        document.getElementsByTagName("html")[0].style.color = "green"
         }
 
         if(score2 > score1){
@@ -51,6 +56,12 @@ function styling(button1Id, button2Id, button3Id, button4Id){
         if(score1 == score2){
             console.log("Remíza")
         }
+
+        // document.addEventListener("keypress", function(event){
+        //     if(event.key === "a"){
+        //         button.click()
+        //     }
+        // })
 })
 }
 
@@ -71,6 +82,43 @@ function resetScore(buttonId, setOrGame){
         }
 
     });
+}
+
+function hide(buttonId){
+    let hidden = 0
+    var button = document.getElementById(buttonId);
+    button.addEventListener("click", function(){
+
+    var buttonElements = document.getElementsByTagName("button")
+
+    if(hidden == 0){
+        hidden = 1
+        document.getElementById("hide").textContent = "Zobrazit tlačítka"
+        document.getElementsByClassName("score-big__game")[0].style = "font-size: 30rem;"
+        document.getElementsByClassName("score-big__game")[1].style = "font-size: 30rem;"
+
+        document.getElementsByClassName("score-big__set")[0].style = "font-size: 20rem;"
+        document.getElementsByClassName("score-big__set")[1].style = "font-size: 20rem;"
+        for (let i = 0, max = buttonElements.length; i<max; i++){
+            buttonElements[i].style.display = "none"
+        }
+    }
+    else {
+        hidden = 0
+        document.getElementById("hide").textContent = "Schovat tlačítka"
+        document.getElementsByClassName("score-big__game")[0].style = "font-size: 20rem;"
+        document.getElementsByClassName("score-big__game")[1].style = "font-size: 20rem;"
+
+        document.getElementsByClassName("score-big__set")[0].style = "font-size: 10rem;"
+        document.getElementsByClassName("score-big__set")[1].style = "font-size: 10rem;"
+        for (let i = 0, max = buttonElements.length; i<max; i++){
+            buttonElements[i].style.display = "block"
+        }
+    
+    }
+
+    document.getElementById("hide").style.display = "block"
+})
 }
 
 function editTeamName(teamNameId){
@@ -141,6 +189,8 @@ function darkMode(buttonId){
   styling("team-1-game-minus")
   styling("team-2-game-minus")
   points()
+  hide("hide")
+
 
 function points(){
     max_points = prompt("Do kolika bodů se hraje?")

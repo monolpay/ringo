@@ -1,36 +1,33 @@
-body{
-    --grid-gap: 12px;
-    --padding: 12px;
-    --clr-dark-h: 0;
-    --clr-dark-s: 0%;
-    --clr-dark-l: 0%;
-    --clr-dark: hsl(var(--clr-dark-h), var(--clr-dark-l), var(--clr-dark-s));
-    --clr-light-h: 0;
-    --clr-light-s: 100%;
-    --clr-light-l: 0%;
-    --clr-light: hsl(var(--clr-light-h), var(--clr-light-l), var(--clr-light-s));
-
-    --clr-action: var(--clr-dark);
-    --clr-background: var(--clr-light);
-
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+button {
+    background-color: rgb(248, 105, 105);
+    border-color: rgba(0, 0, 0, 0.5);
+    height: 50px;
+    color: black;
+    font-size: x-large;
+}
+
+button:hover {
+    background-color: rgb(124, 44, 44);
+}
+
+
 a, p, span, h1, h2, h3, h4, h5, h6 {
-    color: (var(--clr-dark-s));
+    color: black;
     background-color: transparent;
     text-decoration: none;
 }
 
 
-*:not(button, a, h3){
-    background-color: var(--clr-background);
-    color: var(--clr-action);
-}
+
 
 .section__grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--grid-gap);
+    gap: 5px;
     overflow: hidden;
 }
 
@@ -42,13 +39,13 @@ a, p, span, h1, h2, h3, h4, h5, h6 {
 .score-big{
     display: flex;
     flex-direction: column;
-    padding-inline: var(--padding);
-    padding-block: var(--padding);
+    padding-inline: 5px;
+    padding-block: 5px;
 
 }
 
 .score-big__team-name{
-    font-size: 2rem;
+    font-size: 3rem;
     width: 100%;
     text-align: center;
     margin-top: auto;
@@ -62,12 +59,12 @@ a, p, span, h1, h2, h3, h4, h5, h6 {
 }
 
 .score-big__game{
-    font-size: 12rem;
+    font-size: 20rem;
     margin-inline: auto;
 }
 
 .score-big__set{
-    font-size: 4rem;
+    font-size: 10rem;
 }
 
 #score-set-team-2{
@@ -78,7 +75,7 @@ a, p, span, h1, h2, h3, h4, h5, h6 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: calc(var(--grid-gap) / 2);
+    gap: 5px;
     
 }
 
@@ -98,7 +95,7 @@ a, p, span, h1, h2, h3, h4, h5, h6 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: calc(var(--grid-gap) / 2);
+    gap: 5px;
 }
 
 .button-grid-2 > *{
@@ -115,6 +112,24 @@ a, p, span, h1, h2, h3, h4, h5, h6 {
     grid-column: 3;
 }
 
-.only-button > *{
-    width: 100%;
+.only-button{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5px;
 }
+
+#hide {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+}
+
+/* .set {
+    width: 150px;
+}
+
+.score {
+    display: inline-block;
+    width: 200px;
+}  */
