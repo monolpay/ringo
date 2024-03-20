@@ -1,0 +1,120 @@
+body{
+    --grid-gap: 12px;
+    --padding: 12px;
+    --clr-dark-h: 0;
+    --clr-dark-s: 0%;
+    --clr-dark-l: 0%;
+    --clr-dark: hsl(var(--clr-dark-h), var(--clr-dark-l), var(--clr-dark-s));
+    --clr-light-h: 0;
+    --clr-light-s: 100%;
+    --clr-light-l: 0%;
+    --clr-light: hsl(var(--clr-light-h), var(--clr-light-l), var(--clr-light-s));
+
+    --clr-action: var(--clr-dark);
+    --clr-background: var(--clr-light);
+
+}
+
+a, p, span, h1, h2, h3, h4, h5, h6 {
+    color: (var(--clr-dark-s));
+    background-color: transparent;
+    text-decoration: none;
+}
+
+
+*:not(button, a, h3){
+    background-color: var(--clr-background);
+    color: var(--clr-action);
+}
+
+.section__grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--grid-gap);
+    overflow: hidden;
+}
+
+.section__grid > * {
+    overflow: hidden;
+}
+
+
+.score-big{
+    display: flex;
+    flex-direction: column;
+    padding-inline: var(--padding);
+    padding-block: var(--padding);
+
+}
+
+.score-big__team-name{
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+    word-wrap: break-word;
+}
+
+.score-big__numbers{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.score-big__game{
+    font-size: 12rem;
+    margin-inline: auto;
+}
+
+.score-big__set{
+    font-size: 4rem;
+}
+
+#score-set-team-2{
+    order: -1;
+}
+
+.button-grid-1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: calc(var(--grid-gap) / 2);
+    
+}
+
+.button-grid-1 > *{
+    font-size: 1rem;;
+}
+
+.button-grid-1 > *:nth-child(1){
+    grid-row: 1 / 3;
+}
+
+.button-grid-1 > *:nth-child(2){
+    grid-row: 1 / 3;
+}
+
+.button-grid-2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: calc(var(--grid-gap) / 2);
+}
+
+.button-grid-2 > *{
+    font-size: 1rem;;
+}
+
+.button-grid-2 > *:nth-child(3){
+    grid-row: 1 / 3;
+    grid-column: 2;
+}
+
+.button-grid-2 > *:nth-child(4){
+    grid-row: 1 / 3;
+    grid-column: 3;
+}
+
+.only-button > *{
+    width: 100%;
+}
